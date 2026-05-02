@@ -13,7 +13,7 @@
 | Fraol Shiferaw    | UGR/9328/17 |
 | Hailetsion Debash | UGR/8486/17 |
 | Ismael Ibrahim    | UGR/2279/17 |
-|Fikireselam Aragie | UGR/8232/17 |
+
 
 
 **Submitted To:** Dr. Demeke Ayele
