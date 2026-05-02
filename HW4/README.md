@@ -1,105 +1,137 @@
-# Information Retrieval HW4
 
----
-## Project Overview
+# **Information Retrieval Assignment 4: Link-Based Ranking System**
 
-This project implements graph-based retrieval and ranking algorithms using the Cranfield dataset. It extends the inverted index developed in HW2 and constructs a document relationship graph to support graph-based ranking models.
+## **Overview of the Work**
 
-The main objective is to analyze document importance using link structure rather than only term-based similarity.
+In this assignment, we explored ranking techniques that rely on relationships between documents rather than only text similarity. Building on the indexing work completed earlier, we created a graph structure from the Cranfield dataset and applied link analysis algorithms to determine document importance.
 
----
-
-## Implemented Components
-
-### 1. Document Link Graph Construction
-Construction of a directed graph representing relationships between documents based on shared structure and references.
-
-### 2. HITS Algorithm (Hub and Authority Scores)
-- Computes **Hub scores**, representing pages that point to important documents.
-- Computes **Authority scores**, representing important documents pointed to by strong hubs.
-- Iterative update until convergence.
-
-### 3. PageRank Algorithm
-- Computes global importance of documents based on link structure.
-- Uses damping factor (typically 0.85).
-- Iteratively distributes rank until convergence.
-
-### 4. Dummy / Debug Implementations
-- Used to verify correctness of graph structure and ranking logic.
-- Includes simplified versions of PageRank and graph processing.
-
-### 5. Score Evaluation Module
-- Evaluates and validates ranking outputs.
-- Provides aggregated score summaries for analysis.
+The key idea behind this task is to evaluate documents using their connections within a graph, allowing us to capture structural importance in addition to term-based relevance.
 
 ---
 
-## Dataset
+## **Core Functionalities**
 
-The project uses the **Cranfield Collection**, which includes:
+### **1. Graph Formation from Documents**
 
-- cran.all.1400 → document corpus  
-- cran.query → query set  
-- cranqrel → relevance judgments  
+A directed graph was created where nodes represent documents and edges represent relationships derived from shared content or references.
 
----
 
-## System Dependency
+### **2. HITS-Based Scoring Mechanism**
 
-This system relies on intermediate data and inverted index structures generated in HW2 (stored as pickle files). These are used to construct the document graph and support ranking computations.
+The HITS algorithm was implemented to calculate two types of scores:
 
----
+* **Hub Values**: Indicate documents that link to many significant documents
+* **Authority Values**: Indicate documents that are frequently referenced by strong hubs
 
-## Pipeline Workflow
+The scores were updated iteratively until they stabilized.
 
-### Step 1: Data Loading
-Load inverted index and processed data from HW2 (`index.pkl`).
 
-### Step 2: Graph Construction
-Extract document-term relationships and build the document link graph (`Graph.py`).
+### **3. PageRank Computation**
 
-### Step 3: Link Graph Generation
-Generate the graph representation file (`linkgraph.txt`).
+We applied the PageRank algorithm to measure the overall importance of each document within the graph.
 
-### Step 4: HITS Algorithm
-Compute:
-- Hub Scores
-- Authority Scores
+* A damping factor (commonly set to 0.85) was used
+* Scores were updated repeatedly until convergence was reached
 
-### Step 5: PageRank Algorithm
-Compute document importance scores using iterative rank propagation.
+### **4. Simplified Testing Modules**
 
-### Step 6: Evaluation
-Evaluate ranking outputs using `scorer.py`.
+To ensure correctness, lightweight versions of the graph and ranking algorithms were implemented.
 
-### Step 7: Validation
-Validate graph and ranking logic using:
-- `GraphDummy.py`
-- `PageRankDummy.py`
+These were used for:
 
----
+* Verifying graph structure
+* Testing ranking logic in a controlled environment
 
-## Output Files
 
-- `linkgraph.txt` → Document link graph representation  
-- `pagerank_results.txt` → Final PageRank ranked list  
-- `PageRankDummy_results.txt` → Simplified PageRank output (debugging)  
-- `auth.txt` → Authority scores (HITS)  
-- `hub.txt` → Hub scores (HITS)  
-- `scorer.py output` → Aggregated evaluation scores  
+
+### **5. Evaluation Component**
+
+A scoring module was used to analyze and summarize the ranking outputs, helping us verify whether the computed scores were reasonable.
+
+
+## **Dataset Description**
+
+The experiments were conducted using the **Cranfield dataset**, which includes:
+
+* **cran.all.1400** – collection of documents
+* **cran.query** – set of queries
+* **cranqrel** – relevance judgments
 
 ---
 
-## Notes
+## **System Requirements and Dependencies**
 
-- The dataset used is Cranfield, not web-based or AP collections.  
-- The graph is constructed from document-term relationships derived from HW2.  
-- HITS and PageRank operate on the same underlying graph structure.  
-- Dummy modules are used strictly for debugging and validation purposes.  
-- All outputs are generated dynamically from processed dataset inputs.
+The implementation depends on previously generated data structures from earlier work, particularly the inverted index stored as a pickle file.
+
+This data is essential for:
+
+* Constructing the document graph
+* Supporting ranking computations
+
+
+## **Processing Steps**
+
+### **Step 1: Importing Data**
+
+Load processed data and index structures (e.g., `index.pkl`) generated earlier.
+
+
+### **Step 2: Building the Graph**
+
+Using document-term relationships, a graph is constructed through the main graph module.
 
 ---
 
-## Summary
+### **Step 3: Exporting Graph Structure**
 
-This project demonstrates the application of graph-based ranking algorithms (HITS and PageRank) in information retrieval systems. It highlights how link structure can be used to measure document importance beyond traditional term-based retrieval models.
+The graph is saved in a text-based format (`linkgraph.txt`) for further processing.
+
+---
+
+### **Step 4: Applying HITS Algorithm**
+
+Compute hub and authority values through iterative updates.
+
+
+
+### **Step 5: Running PageRank**
+
+Calculate document importance scores using rank propagation across the graph.
+
+
+### **Step 6: Result Analysis**
+
+Evaluate the ranking outputs using a scoring script.
+
+
+
+### **Step 7: Verification**
+
+Use simplified implementations to validate correctness of both graph structure and ranking behavior.
+
+
+## **Generated Outputs**
+
+* `linkgraph.txt` → Representation of the document graph
+* `pagerank_results.txt` → Final PageRank scores
+* `PageRankDummy_results.txt` → Output from simplified PageRank
+* `auth.txt` → Authority scores from HITS
+* `hub.txt` → Hub scores from HITS
+* Evaluation output → Summary scores from the scoring module
+
+---
+
+## **Additional Remarks**
+
+* The work is based entirely on the Cranfield dataset rather than web-scale data
+* Graph construction is derived from term-based relationships created earlier
+* Both HITS and PageRank operate on the same graph structure
+* Simplified modules are included only for testing and debugging
+* All outputs are generated dynamically from processed inputs
+
+---
+
+## **Final Summary**
+
+This assignment illustrates how graph-based techniques such as HITS and PageRank can be applied within an Information Retrieval system. Unlike traditional approaches that rely only on term frequency, these methods use document relationships to identify important documents, providing an additional perspective on ranking.
+
