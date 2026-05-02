@@ -79,7 +79,7 @@ Python made debugging and testing easier compared to a complex server-based syst
 
 ---
 
-## **Final Tools Used**
+## *Tools Used**
 
 The final system includes:
 
@@ -114,7 +114,7 @@ The system successfully processed queries and returned ranked documents using mu
 
 ---
 
-# **HW2 —> Data Preprocessing and Index Construction**
+# **HW2 —> Data Cleaning and Inverted Index Construction**
 
 This phase focused on cleaning and structuring the dataset for retrieval.
 
@@ -134,7 +134,7 @@ An inverted index was built using indexer.py, mapping terms to documents.
 
 ---
 
-# **HW4 —> Web Crawling and Link-Based Ranking**
+# **HW4 —> URL Normalization and Link-Based Ranking Techniques**
 
 This stage introduced web structure analysis and URL processing.
 
@@ -157,7 +157,7 @@ We implemented:
 
 ---
 
-# **HW5 —> Ranking and Evaluation (TREC Evaluation)**
+# **HW5 —>Retrieval Modeling and Performance Evaluation**
 
 This stage focused on evaluating retrieval performance using standard IR metrics.
 
@@ -182,7 +182,7 @@ This stage focused on evaluating retrieval performance using standard IR metrics
 
 ---
 
-# **HW6 —> Machine Learning Integration**
+# **HW6 —>Machine Learning Integration for Ranking Optimization**
 
 In this phase, machine learning techniques were introduced for ranking improvement.
 
@@ -197,7 +197,7 @@ In this phase, machine learning techniques were introduced for ranking improveme
 
 ---
 
-# **HW7 —> System Optimization**
+# **HW7 —> System Refinement and Performance Enhancement**
 
 This stage focused on improving preprocessing and feature representation.
 
@@ -213,7 +213,7 @@ This stage focused on improving preprocessing and feature representation.
 
 ---
 
-# **HW8 —>Clustering and Final System Integration**
+# **HW8 —>Document Clustering and System Integration**
 
 The final stage involved clustering documents into groups based on similarity.
 
