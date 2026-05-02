@@ -1,0 +1,3 @@
+<EMAILID>1056</EMAILID>
+<TEXT>prize click click click prize click prize win money prize click free win money free prize prize free offer win</TEXT>
+<LABEL>spam</LABEL>

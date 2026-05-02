@@ -1,0 +1,3 @@
+<EMAILID>1001</EMAILID>
+<TEXT>offer click click offer win offer win click offer offer click win win click free prize prize free click prize</TEXT>
+<LABEL>spam</LABEL>

@@ -1,0 +1,9 @@
+Loading raw email files...
+Total docs: 200
+Fold accuracy: 100.0
+Fold accuracy: 100.0
+Fold accuracy: 100.0
+Fold accuracy: 100.0
+Fold accuracy: 100.0
+
+Final Accuracy: 100.0

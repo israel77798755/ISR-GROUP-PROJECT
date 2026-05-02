@@ -1,0 +1,10 @@
+# simple_rank_generator.py
+
+queries = ["151801", "151802", "151803"]
+
+docs = [f"doc{i}" for i in range(1, 51)]
+
+with open("rankList.txt", "w") as f:
+    for q in queries:
+        for i, d in enumerate(docs):
+            f.write(f"{q} Q0 {d} {i+1} {1/(i+1)} EXP\n")
