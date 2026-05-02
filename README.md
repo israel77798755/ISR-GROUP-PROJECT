@@ -53,7 +53,7 @@ These challenges slowed down progress and made the system difficult to maintain.
 
 ---
 
-## **Switch to Python-Based Implementation**
+## **Adoption of a Custom Python-Based Retrieval Framework**
 
 Due to the above limitations, we decided to implement the entire IR pipeline using Python.
 
